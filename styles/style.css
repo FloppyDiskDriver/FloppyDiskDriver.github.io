@@ -1,0 +1,12 @@
+#header{
+	background-color: #212121;
+}
+body{
+	background: radial-gradient(circle farthest-corner at 10px 10px, #004A7F, #57007F);
+	background-attachment: fixed;
+
+}
+#main{
+	background-color: #4a4a4a;
+	opacity: 0.8;
+}
