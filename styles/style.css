@@ -7,6 +7,5 @@ body{
 
 }
 #main{
-	background-color: #4a4a4a;
-	opacity: 0.8;
+	background-color: rgba(77, 77, 77, 0.7);
 }
