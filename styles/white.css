@@ -1,14 +1,13 @@
 #header{
-	background-color: #838383;
+	background-color: #a1a1a1;
 }
 body{
-	background: cadetblue;
+	background: #548eeb;
 	background-attachment: fixed;
 
 }
 #main{
-	background-color: rgba(41, 41, 41, 0.9);
-	box-shadow: 8px 8px;
+	background-color: rgba(107, 107, 107, 0.6);
 }
 #border{
 	border-color: #363636;
