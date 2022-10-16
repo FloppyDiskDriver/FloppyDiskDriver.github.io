@@ -1,25 +1,95 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="yandex-verification" content="1f6c223dc7097318">
 <meta name="google-site-verification" content="KBsH0jH_U7s3kZT-SNDUS3ODic02ROJhkNyPryHu8gs">
-<link rel="stylesheet" type="text/css" href="styles/elements.css">
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="styles/fonts.css">
-<title> Сайт Carbonated Cat </title>
-</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>ODDW - Open Delta Dev WorkBench</title>
+<header>
+<div id="header">
+<h1>Open Delta DEV WorkBench</h1>
+<div id="logo">
+<img src="logo.png" width="75" height="75"></img>
+</div>
+</div>
+</header>
 <body>
-	<div id="main"><h2>Добро пожаловать на сайт Carbonated Cat -a! (Газированого Кота)</h2>
-	<p>Carbonated Cat или Газированый Кот - неизвестный человек, администратор сообществ в ВК, мститель, помощник, Web - разработчик, GameDev - разработчик.</p>
-	<hr>
-	<h2>Сообщества</h2>
-	<p> https://vk.com/cfopensource/ - личное сообщество</p>
-	<p>	https://vk.com/winos_world_2008/ - модерируемое сообщество</p>
-	<p>	https://vk.com/w102018_tv/ - администрируемое сообществa</p>
-    <hr>
-    <h2> Прочее </h2>
-    <a href="https://github.com/FloppyDiskDriver/SECKS_V_StopLamersVirus_Decode">Сорс вируса StopLamers</a>
-    <br>
-    <a href="https://github.com/FloppyDiskDriver/SideLine-source-map">Первая карта для игр на движке Source</a>
+<div id="code">#include <iostream>
+#include <string>
+#include <vector>
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, const std::vector<T>& vec)
+{
+    for (auto& el : vec)
+    {
+        os << el << ' ';
+    }
+    return os;
+}
+
+int main()
+{
+    std::vector<std::string> vec = {
+        "Hello", "from", "GCC", __VERSION__, "!" 
+    };
+    std::cout << vec << std::endl;
+}
+</div>
+<script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var code = ace.edit("code");
+    
+    $(function() {
+        code = ace.edit("code");                      // создаем редактор из элемента с id="code"
+        code.setTheme("ace/theme/textmate");          // выбираем тему оформления для подсветки синтаксиса
+        code.getSession().setMode("ace/mode/c_cpp");  // говорим что код надо подсвечивать как C++ код
+        code.setShowPrintMargin(false);
+        code.$blockScrolling = Infinity;              // отключаем устаревшие, не поддерживаемые фишки редактора
+    });
+</script>
+<div id="sidebar">
+<h3>Supporting and additional literature</h3> 
+<a href="https://en.cppreference.com/w/c">C reference</a>
+<br>
+<a href="https://youngcoder.ru/">YoungCoder</a>
+<br>
+<a href="n1256.pdf">C99 Standart Manual</a>
+</div>
+<script>
+function run() {
+    // Команда для компиляции на удаленном сервере
+    var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Compilation: SUCCESS."
+        + " Program output is:\n' && ./main_prog && echo \"\nExit code: $?\"";
+
+    var output = $("#output");
+    output.text('');
+    var to_compile = {
+        "src": code.getValue(),
+        "cmd": cmd,
+    };
+
+    output.text("Executing... Please wait.");
+
+    $.ajax({
+        url: "http://coliru.stacked-crooked.com/compile",
+        type: "POST",
+        data: JSON.stringify(to_compile),
+        contentType:"text/plain; charset=utf-8",
+        dataType: "text"
+    }).done(function(data) {
+        output.text(data);
+    }).fail(function(data) {
+        output.text("Server error: " + data);
+    });
+};
+
+</script>
+<div id="runpanel"> 
+<button id="run" onclick='run();'>Run</button> 
+
+<p>Output:</p><pre id="output">Waiting...</pre>
+
 </div>
 </body>
 </html>

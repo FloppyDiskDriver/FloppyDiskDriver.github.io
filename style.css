@@ -1,0 +1,59 @@
+#logo{
+	width: 5%;
+	height: 5%;
+	margin-left: 1%;
+	margin-top: 1%;
+    position: absolute;
+}
+#header{
+    background-color: #3b3c36;
+    width: 100%;
+    height: 100px;
+    margin-left: 0px;
+	position:relative;
+	border-radius: 0 0 10px 10px; 
+}
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color:#444444;
+}
+h1{
+	color: #FFFFFF;  
+    font: 32px Serif;  
+    margin-left: 35%;
+    position: absolute;
+}
+#sidebar{
+	background-color: #3fcf00;
+	margin-left: 0px;
+	margin-top: 10px;
+	height: 180px;
+	width: 170px;
+	border-radius: 0 10px 10px 0; 
+	position:relative;
+}
+a{
+	font-size: 15pt;
+	color: #000000;
+}
+#code {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+	margin-left: 25%;
+}
+#run{
+	margin-right: 0px;
+	position:absolute;
+	font-size: 14pt;
+	color: #FFFFFF;
+	background-color: #56A0D3;
+}
+#output{
+	margin-right:0px;
+	position: absolute;
+	font-size: 16pt;
+	color: #FFFFFF;
+	background-color: #56A0D3;
+}
