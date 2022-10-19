@@ -32,29 +32,26 @@ h1{
 	width: 170px;
 	border-radius: 0 10px 10px 0; 
 	position:relative;
+	color: #000000;
 }
 a{
 	font-size: 15pt;
-	color: #000000;
 }
-#code {
-    position: absolute;
-    width: 800px;
-    height: 600px;
-	margin-left: 25%;
-}
-#run{
-	margin-right: 0px;
-	position:absolute;
-	font-size: 14pt;
-	color: #FFFFFF;
-	background-color: #56A0D3;
-}
-#output{
-	margin-right:0px;
+iframe{
 	position: absolute;
-	font-size: 16pt;
+	margin-left: 18%;
+	height: 80%;
+	width: 60%;
+	margin-bottom: 10px;
+}
+#footer{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(13,107,0,1) 0%, rgba(0,81,154,1) 100%);
+    width: 100%;
+    height: 100px;
+    margin-left: 0px;
+	margin-top: 10%;
+	bottom: 0px;
+	position:absolute;
+	border-radius: 10px 10px 0 0; 
 	color: #FFFFFF;
-	background-color: #56A0D3;
-	display:inline-block
 }
