@@ -1,3 +1,0 @@
-# .stdout is a named pipe (mkfifo) and managed by logger.sh
-#exec 1>.stdout
-#exec 2>.stdout
