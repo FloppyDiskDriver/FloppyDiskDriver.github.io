@@ -67,6 +67,7 @@ div.fade {
 }
 
 </style>
+
 </head>
 <body>
     <div id="fade" class="fade"></div>
@@ -103,9 +104,7 @@ div.fade {
                         <!-- link -->
 
 
-                            <!-- link -->
-
-
+                          
 
 
                         <div class="f1 vbox"></div>
@@ -118,9 +117,7 @@ div.fade {
                 <!-- central Coliru title -->
                 <div class="f0 vbox" style="font-size: large">
                     <div class="hbox f1"></div>
-                    <div class="hbox f0">
-                        <b style="letter-spacing: 10px; font-size: 18px">Coliru</b>
-                    </div>
+                    
                     <div class="hbox f1"></div>
                 </div>
 
@@ -242,8 +239,16 @@ div.fade {
     </div>
 </body>
 
-<script src="ajax/libs/ace/1.2.5/ace.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
 <script>
     parent.app.editorDocument = document;
     parent.app.elements.editor = ace.edit("editor");
-    parent.app.elements.editor.setTheme("/ace/theme/tex
+    parent.app.elements.editor.setTheme("ace/theme/textmate");
+    parent.app.elements.editor.getSession().setMode("ace/mode/c_cpp");
+    parent.app.elements.editor.setShowPrintMargin(false);
+    parent.app.elements.editor.setBehavioursEnabled(false);
+    parent.app.elements.editor.focus();
+    parent.app.elements.fade = document.getElementById("fade");
+    parent.app.elements.fade_count = 0;
+</script>
+</html>
