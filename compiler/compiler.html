@@ -103,7 +103,8 @@ function run() {
     }).done(function(data) {
         output.text(data);
     }).fail(function(data) {
-      output.text("Server error: " + JSON.stringify(data));
+     output.text("Server error: " + data);
+         });
 };
 	</script>
 	</body>
