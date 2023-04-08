@@ -82,8 +82,8 @@ return 0;
 
     <script>
 function run() {
-    var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Done.\n"
-        + " Program output is:\n' && \n./main_prog && echo \"\nExit code: $?\n"";
+    var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Done."
+        + " Program output is:\n' && ./main_prog && echo \"\nExit code: $?\"";
 
     var output = $("#output");
     output.text('');
